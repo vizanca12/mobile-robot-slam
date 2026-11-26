@@ -2,6 +2,8 @@
 
 Project for the mobile robotics course (ROB201) at ENSTA Paris. A simulated robot with a lidar builds a map of an unknown environment, localizes itself in it, explores it on its own and returns to its starting point.
 
+![Occupancy grid built during exploration, with the planned path](images/occupancy_map.jpg)
+
 Built on the course template [ensta-rob201](https://github.com/emmanuel-battesti/ensta-rob201) and the [Place-Bot](https://github.com/emmanuel-battesti/place-bot) simulator. See `INSTALL.md` for setup.
 
 ## What I implemented (`tp_rob201/`)
