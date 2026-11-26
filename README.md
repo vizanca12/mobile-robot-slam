@@ -1,19 +1,23 @@
-# Welcome to *ensta-rob201*
+# Mobile Robot SLAM and Exploration
 
-This git repository *ensta-rob201* is the starting point for your work during the ROB201 project/course. The online, up-to-date version of this code is available at: [GitHub repository *ensta-rob201*](https://github.com/emmanuel-battesti/ensta-rob201)
+Project for the mobile robotics course (ROB201) at ENSTA Paris. A simulated robot with a lidar builds a map of an unknown environment, localizes itself in it, explores it on its own and returns to its starting point.
 
-To start working on your ROB201 project, you will have to install this repository (which will install required dependencies). The [INSTALL.md](INSTALL.md) file contains installation tips for Ubuntu and Windows. The code will work also on MacOS, with minimal adaptation of the Ubuntu installation instructions.
+Built on the course template [ensta-rob201](https://github.com/emmanuel-battesti/ensta-rob201) and the [Place-Bot](https://github.com/emmanuel-battesti/place-bot) simulator. See `INSTALL.md` for setup.
 
-# Place-Bot
+## What I implemented (`tp_rob201/`)
 
-*ensta-rob201* use the **Place-Bot** simulator: [**Place-Bot** GitHub repository](https://github.com/emmanuel-battesti/place-bot). It will be installed automatically with the above procedure, but it is strongly recommended to read the [*Place-Bot* documentation](https://github.com/emmanuel-battesti/place-bot#readme).
+| File | Content |
+|---|---|
+| `control.py` | Reactive obstacle avoidance and potential-field navigation toward a goal |
+| `occupancy_grid.py` | Log-odds occupancy grid: lidar ray tracing, world/map conversions, display, save and load |
+| `tiny_slam.py` | Scan-matching localization (pose score optimization) and map update |
+| `planner.py` | A* path planning on the occupancy grid |
+| `frontier_exploration.py` | Frontier detection and selection by distance and expected information gain |
+| `my_robot_slam.py` | State machine: exploration, return to start and final navigation |
 
+## Run
 
-# Submission
-
-At the end of the course, you will have to submit your solution to your teacher in a zip file containing this complete repository. 
-
-# Contact
-
-If you have questions about the code, in particular the use of *Place-Bot* you can contact: emmanuel . battesti at ensta-paris . fr
-
+```bash
+pip install -r requirements.txt
+python tp_rob201/main.py
+```
